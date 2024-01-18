@@ -10,7 +10,7 @@
     "test": "exit 0",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "turbo run build && changeset publish"
+    "release": "changeset publish"
   },
   "repository": {
     "type": "git",
