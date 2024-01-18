@@ -6,15 +6,15 @@
   "publishConfig": {
     "@jshike:registry": "https://npm.pkg.github.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jshike/test.pkg.git"
+  },
   "scripts": {
     "test": "exit 0",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "changeset publish"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jshike/test.pkg.git"
   },
   "author": "",
   "license": "ISC",

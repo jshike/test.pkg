@@ -23,13 +23,23 @@ jobs:
       - name: Install Dependencies
         run: yarn
 
-      - name: Create Release Pull Request or Publish
+      - name: Creating .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            @jshike:registry=https://npm.pkg.github.com
+            //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}
+            registry=https://registry.npmjs.org
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create release Pull Request or publish to Github Packages
         id: changesets
         uses: changesets/action@v1
+        with:
+          version: yarn version-packages
+          publish: yarn release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Publish
-        if: steps.changesets.outputs.hasChangesets == 'false'
-        # You can do something when a publish should happen.
-        run: yarn release
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
