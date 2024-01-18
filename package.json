@@ -1,0 +1,22 @@
+{
+  "name": "@jshike/test.pkg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "publishConfig": {
+    "@jshike:registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jshike/test.pkg.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jshike/test.pkg/issues"
+  },
+  "homepage": "https://github.com/jshike/test.pkg#readme"
+}
