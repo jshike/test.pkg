@@ -1,13 +1,16 @@
 {
   "name": "@jshike/test.pkg",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "publishConfig": {
     "@jshike:registry": "https://npm.pkg.github.com"
   },
   "scripts": {
-    "test": "exit 0"
+    "test": "exit 0",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build && changeset publish"
   },
   "repository": {
     "type": "git",
@@ -18,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/jshike/test.pkg/issues"
   },
-  "homepage": "https://github.com/jshike/test.pkg#readme"
+  "homepage": "https://github.com/jshike/test.pkg#readme",
+  "dependencies": {
+    "@changesets/cli": "^2.27.1"
+  }
 }
